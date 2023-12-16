@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block contents %}
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name_hall" placeholder="Nazwa sali">
+    <input type="text" name="capacity_hall" placeholder="Pojemność sali">
+    <input type="submit">
+</form>
+{% endblock %}
