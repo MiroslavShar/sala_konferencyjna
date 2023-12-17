@@ -4,5 +4,5 @@ from django.db import models
 
 class Hall(models.Model):
     name_hall = models.CharField(max_length=255)
-    capacity_hall = models.IntegerField
-    availability_of_projector = models.BooleanField(default=True)
+    capacity_hall = models.IntegerField(default=False)
+    availability_of_projector = models.BooleanField()
