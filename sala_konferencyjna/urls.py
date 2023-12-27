@@ -21,5 +21,7 @@ from app_sala_konferencyjna import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('room/new/', views.add_new_hall)
+    path('room/new/', views.add_new_hall),
+    path('room/<int:id>/', views.hall_detail),
+    path('rooms/', views.show_all_halls)
 ]

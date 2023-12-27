@@ -29,5 +29,19 @@ def add_new_hall(request):
         h.save()
         return render(request, 'base.html')
 
+def show_all_halls(request):
+    halls = Hall.objects.all()
+    name_hall_show = request.GET.get('name_hall', '')
+    capacuty_hall_show = request.GET.get('capacity_hall', '')
+    if name_hall_show != '':
+        halls = halls.filter(name_hall__icontains=name_hall_show)
+    if capacuty_hall_show != '':
+        halls = halls.filter(capacity_hall__exact=capacuty_hall_show)
+    return render(request, 'all_halls.html', context={'halls': halls})
+
+def hall_detail(request, id):
+    show_hall_detail = Hall.objects.get(id=id)
+    return render(request, 'detail_hall.html', context={'halls_detail': show_hall_detail})
+
 
 # Create your views here.

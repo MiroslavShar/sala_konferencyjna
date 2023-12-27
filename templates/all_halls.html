@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contents %}
+<form>
+    Wyszukaj sale
+    <input type="text" name="name_hall" placeholder="Nazwa sali">
+    <input type="text" name="capacity_hall" placeholder="Liczba miejsc">
+    <input type="submit">
+</form>
+Sale - <br>
+<ul>
+    {% for h in halls %}
+    <li><a href="/room/{{ h.id }}/">{{ h.id }} {{ h.name_hall }} {{ h.capacity_hall }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
