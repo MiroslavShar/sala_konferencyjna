@@ -6,3 +6,5 @@ class Hall(models.Model):
     name_hall = models.CharField(max_length=255)
     capacity_hall = models.IntegerField(default=False)
     availability_of_projector = models.BooleanField()
+    availability_hall = models.BooleanField(default=True)
+
